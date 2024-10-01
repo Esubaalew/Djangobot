@@ -18,7 +18,7 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE) -> None:
 async def bot_tele(text):
     # Create application
     application = (
-        Application.builder().token("7421427110:AAF0PzXYiahZYsV9ioYDMgKUFZqHyPWekvk").build()
+        Application.builder().token(os.getenv('TOKEN')).build()
     )
 
     
@@ -26,7 +26,7 @@ async def bot_tele(text):
     application.add_handler(CommandHandler("start", start))
 
     # Start application
-    await application.bot.set_webhook(url='https://testing.4gmobiles.com/')
+    await application.bot.set_webhook(url=os.getenv('webhook'))
     await application.update_queue.put(
         Update.de_json(data=text, bot=application.bot)
     )
