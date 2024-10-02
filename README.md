@@ -52,6 +52,23 @@ Make sure you have the following installed:
 ### Deployment
 
 To deploy this project, follow your preferred method (Vercel, local server etc.), ensuring that you properly configure the environment variables.
+If you are hosting it on verce create `vercel.json` fine in the root directory add th ff code please replace the names with your own app names
+``` json
+{
+  "builds": [
+    {
+      "src": "dbot/wsgi.py",
+      "use": "@vercel/python"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "dbot/wsgi.py"
+    }
+  ]
+}
+```
 
 ### Setting Webhook
 
