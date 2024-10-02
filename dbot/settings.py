@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-dvhexv@s$hd+kdxnq08$--3v5gh-9=@k)a-jg!j!%cm7fq85zy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".4gmobiles.com", "localhost" ]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -68,7 +68,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'dbot.wsgi.application'
+WSGI_APPLICATION = 'dbot.wsgi.app'
 
 
 # Database
